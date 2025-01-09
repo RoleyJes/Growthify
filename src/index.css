@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: white;
+}
+
+.guaranteeBg {
+  background-image: url("./assets/guaranteeBg.svg");
+  background-color: #f9fbff;
+}
+
+@media screen and (max-width: 1023px) {
+  .guaranteeBg {
+    background-image: url("./assets/guaranteeMobile.svg");
+  }
+}
+
+.curvePricing::before {
+  content: "";
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  height: 8%;
+  width: 100%;
+  background: #f9fbff;
+}
+
+@media only screen and (max-width: 767px) {
+  .curvePricing::before {
+    bottom: 0rem;
+    height: 1%;
+    background: white;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .curvePricing::before {
+    bottom: 0rem;
+    height: 3%;
+    background: #f9fbff;
+  }
+}
+
+@keyframes lslide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes rslide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.leftSlide {
+  animation: 20s lslide infinite linear;
+  width: max-content;
+}
+.rightSlide {
+  animation: 20s rslide infinite linear;
+  width: max-content;
+}
+
+.ddd {
+  background-image: url("./assets/cardCurve1.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
