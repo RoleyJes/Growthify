@@ -20,8 +20,11 @@ const router = createBrowserRouter([
       { path: "/terms-of-use", element: <Terms /> },
       { path: "/refund-policy", element: <Refund /> },
       { path: "/disclaimer", element: <Disclaimer /> },
-      { path: "/privacy-policy", element: <Privacy /> },
-      { path: "*", element: <NotFound /> }, // Catch-all for unmatched routes
+      { path: "/privacy", element: <Privacy /> },
+      {
+        path: "*",
+        element: <NotFound />,
+      }, // Catch-all for unmatched routes
     ],
   },
 ]);

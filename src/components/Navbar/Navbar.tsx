@@ -3,7 +3,8 @@ import HeaderLogo from "../../assets/HeaderLogo.svg";
 import HeaderLogoMobile from "../../assets/HeaderLogoMobile.svg";
 import { useState } from "react";
 import Hamburger from "../../assets/Hamburger.svg";
-import Link from "../Link";
+import { Link } from "react-router-dom";
+import Btn from "../Btn";
 
 const Navbar = () => {
   const [navbarBgColor, setNavbarBgColor] = useState(true);
@@ -23,6 +24,13 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <>
       <header
@@ -31,22 +39,23 @@ const Navbar = () => {
         } bg-white fixed top-0 z-[20] w-full  transition-all`}>
         <div className="max-w-[1512px] mx-auto py-4 px-4 lg:px-10">
           <nav className="flex flex-wrap justify-between items-center">
-            <a href="/">
+            <Link to="/">
               <picture>
                 <source media="(min-width:768px)" srcSet={HeaderLogo} />
                 <img src={HeaderLogoMobile} alt="logo" />
               </picture>
-            </a>
+            </Link>
             <ul className="lg:flex items-center gap-[45px] hidden">
               {navLinks.map((item) => (
                 <li
                   key={item.label}
-                  className="hover:text-blue transition-all duration-300">
-                  <a href={item.href}>{item.label}</a>
+                  onClick={() => handleScroll(item.id)}
+                  className="cursor-pointer hover:text-blue transition-all duration-300">
+                  <p>{item.label}</p>
                 </li>
               ))}
 
-              <Link href="#getStarted" text="Contact" />
+              <Btn onclick={() => handleScroll("getStarted")} text="Contact" />
             </ul>
 
             <button
@@ -60,15 +69,17 @@ const Navbar = () => {
               <div className="flex flex-col basis-full gap-4">
                 <ul className="flex flex-col gap-[1rem] items-center mt-8">
                   {navLinks.map((item) => (
-                    <li key={item.label} className="font-normal text-[16px]">
-                      <a href={item.href}>{item.label}</a>
+                    <li
+                      key={item.label}
+                      className="cursor-pointer font-normal text-[16px]"
+                      onClick={() => handleScroll(item.id)}>
+                      <p>{item.label}</p>
                     </li>
                   ))}
-                  <a
-                    href="#getStarted"
-                    className="bg-blue rounded-[0.375rem] flex justify-center items-center py-[0.625rem] px-[1.875rem] text-white text-[1.1875rem]">
-                    Contact
-                  </a>
+                  <Btn
+                    onclick={() => handleScroll("getStarted")}
+                    text="Contact"
+                  />
                 </ul>
               </div>
             )}

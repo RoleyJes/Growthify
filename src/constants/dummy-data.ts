@@ -1,4 +1,4 @@
 export const navLinks = [
-  { href: "#about", label: "About Us" },
-  { href: "#pricing", label: "Pricing" },
+  { id: "about", label: "About Us" },
+  { id: "pricing", label: "Pricing" },
 ];

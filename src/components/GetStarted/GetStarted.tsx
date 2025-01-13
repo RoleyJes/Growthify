@@ -2,8 +2,10 @@ import bars from "../../assets/getStartedBars.svg";
 
 export default function GetStarted() {
   return (
-    <section className="px-6 lg:px-[4.06rem] bg-[#f9fbff]" id="getStarted">
-      <div className="pt-[3rem] pb-[2.12rem] max-w-[1409px] mx-auto">
+    <section className="px-6 lg:px-[4.06rem] bg-[#f9fbff]">
+      <div
+        className="pt-[3rem] pb-[2.12rem] max-w-[1409px] mx-auto"
+        id="getStarted">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1.5rem]">
           {/* Card 1 */}
           <div className="px-[2.38rem] py-[2.97rem] lg:pt-[8.06rem] flex flex-col gap-[1.06rem] bg-blue rounded-[1.875rem] shadow-[0_4px_48.4px_0_rgba(0,98,255,0.06)] text-white">
