@@ -26,8 +26,8 @@ export default function GetStarted() {
               data-aos-delay="70">
               <a
                 className="text-[1.1875rem] leading-[1.425rem] lg:text-[1.4375rem] lg:leading-[1.725rem] italic underline"
-                href="mailto:hello@growthify.global">
-                hello@growthify.globall
+                href="mailto:jessicaoritsegbubemi@gmail.com">
+                hello@growthify.grow
               </a>
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function GetStarted() {
               help you raise awareness, boost credibility and attract investors
             </p>
             <a
-              href="mailto:hello@growthify.globall"
+              href="mailto:jessicaoritsegbubemi@gmail.com"
               className="bg-blue w-fit rounded-[0.375rem] flex justify-center items-center p-[0.5rem] lg:py-[0.625rem] lg:px-[1.875rem] text-[rgba(255,255,255,0.9)] text-base lg:text-[1.1875rem] hover:bg-[#001940] hover:outline hover:outline-white active:bg-[#001940] active:outline active:outline-white transition-all duration-300 mx-auto lg:mx-0 z-[2]"
               data-aos="fade-left"
               data-aos-delay="70">

@@ -9,7 +9,8 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Refund from "./pages/Refund";
 import Disclaimer from "./pages/Disclaimer";
-import NotFound from "./components/Error/NotFound";
+// import NotFound from "./components/Error/NotFound";
+import GlobalErrorBoundary from "./components/Error/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -21,9 +22,13 @@ const router = createBrowserRouter([
       { path: "/refund-policy", element: <Refund /> },
       { path: "/disclaimer", element: <Disclaimer /> },
       { path: "/privacy", element: <Privacy /> },
+      // {
+      //   path: "*",
+      //   element: <NotFound />,
+      // }, // Catch-all for unmatched routes
       {
         path: "*",
-        element: <NotFound />,
+        element: <GlobalErrorBoundary error={"We searched the ends of the earth, but couldn't find what you're looking for :("} resetErrorBoundary={()=> (window.location.href="/")} />,
       }, // Catch-all for unmatched routes
     ],
   },
